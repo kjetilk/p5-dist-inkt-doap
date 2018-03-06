@@ -16,6 +16,8 @@ after PopulateModel => sub {
   my $justaddfile = path($ENV{'DIST_INKT_ADD_DATA'} || "~/.dist-inkt-data.ttl");
   my $filteredfile = path($ENV{'DIST_INKT_FILTERED_DATA'} || "~/.dist-inkt-filtered-data.ttl");
 
+  $self->log('Reading %s', $justaddfile);
+
   my $ap = RDF::Trine::Parser->guess_parser_by_filename($justaddfile->basename);
   my $base_uri = sprintf('http://purl.org/NET/cpan-uri/dist/%s/', $self->name);
   $ap->parse_file_into_model($base_uri, $justaddfile->filehandle, $self->model);
