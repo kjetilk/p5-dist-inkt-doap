@@ -5,35 +5,23 @@ our $VERSION   = '0.100';
 
 use Moose::Role;
 use namespace::autoclean;
-use RDF::Trine;
+use RDF::Trine::Parser;
+use Path::Tiny;
 
 with 'Dist::Inkt::Role::RDFModel';
 
 after PopulateModel => sub {
   my $self = shift;
 
-  my $justaddfile = $ENV{'DIST_INKT_ADD_TURTLE') || $ENV{'HOME'} . '/.dist-inkt-data.ttl';
-  my $filteredfile = $ENV{'DIST_INKT_FILTERED_TURTLE') || $ENV{'HOME'} . '/.dist-inkt-filtered-data.ttl';
+  my $justaddfile = path($ENV{'DIST_INKT_ADD_DATA'} || "~/.dist-inkt-data.ttl");
+  my $filteredfile = path($ENV{'DIST_INKT_FILTERED_DATA'} || "~/.dist-inkt-filtered-data.ttl");
 
-  my $addstring = $self->open_and_fix($justaddfile) if (-r $justaddfile);
-  
-  
-        {
+  my $ap = RDF::Trine::Parser->guess_parser_by_filename($justaddfile->basename);
+  my $base_uri = sprintf('http://purl.org/NET/cpan-uri/dist/%s/', $self->name);
+  $ap->parse_file_into_model($base_uri, $justaddfile->filehandle, $self->model);
+								  
+								  
 
-                 
-                $self->log('Reading %s', $file);
-                $file =~ /\.pret$/
-                        ? do {
-                                require RDF::TrineX::Parser::Pretdsl;
-                                parse($file, into => $self->model, using => 'RDF::TrineX::Parser::Pretdsl'->new)
-                        }: parse($file, into => $self->model);
-        }
 };
 
-sub open_and_fix {
-  my ($self, $file) = @_;
-  
-  open (my $fh, '<', $file) || $self->log("Couldn't open $file");
-  
-		 
 1;
