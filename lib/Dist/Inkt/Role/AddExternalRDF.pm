@@ -1,4 +1,4 @@
-package Dist::Inkt::Role::AddExternalTurtle;
+package Dist::Inkt::Role::AddExternalRDF;
 
 our $AUTHORITY = 'cpan:KJETILK';
 our $VERSION   = '0.100';
