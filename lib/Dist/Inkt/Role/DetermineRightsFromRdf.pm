@@ -1,7 +1,7 @@
 package Dist::Inkt::Role::DetermineRightsFromRdf;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.101_01';
+our $VERSION   = '0.101_02';
 
 use Moose::Role;
 use RDF::Trine qw( iri literal statement variable );

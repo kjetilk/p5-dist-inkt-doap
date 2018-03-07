@@ -5,7 +5,7 @@ use warnings;
 package Dist::Inkt::DOAP;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.101_01';
+our $VERSION   = '0.101_02';
 
 1;
 
