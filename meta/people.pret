@@ -7,12 +7,10 @@
 
 cpan:TOBYINK
     :name  "Toby Inkster";
-    owl:sameAs  result:user-Toby-Inkster ;
-    :page  <https://metacpan.org/author/TOBYINK>;
-    :mbox  <mailto:tobyink@cpan.org>.
+    owl:sameAs  result:user-Toby-Inkster .
+    
 
 cpan:KJETILK
-    a           foaf:Person ;
-    owl:sameAs  <http://www.kjetil.kjernsmo.net/foaf#me> , result:user-Kjetil-Kjernsmo ;
-    :name   "Kjetil Kjernsmo" ;
-    :mbox   <mailto:kjetilk@cpan.org> .
+    owl:sameAs  result:user-Kjetil-Kjernsmo ;
+    :name   "Kjetil Kjernsmo" .
+    
