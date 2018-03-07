@@ -20,8 +20,8 @@ after PopulateModel => sub {
   if ($justaddfile->is_file) {
 	 $self->log('Reading %s', $justaddfile);
 	 
-	 my $ap = RDF::Trine::Parser->guess_parser_by_filename($justaddfile->basename);
-	 $ap->parse_file_into_model($base_uri, $justaddfile->filehandle, $self->model);
+	 my $p = RDF::Trine::Parser->guess_parser_by_filename($justaddfile->basename);
+	 $p->parse_file_into_model($base_uri, $justaddfile->filehandle, $self->model);
   }
   
 };
