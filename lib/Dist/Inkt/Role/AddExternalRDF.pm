@@ -53,3 +53,46 @@ after PopulateModel => sub {
 };
 
 1;
+
+__END__
+
+=pod
+
+=encoding utf-8
+
+=head1 NAME
+
+Dist::Inkt::Role::AddExternalRDF - Role to add data from sources outside the distribution
+
+=head1 DESCRIPTION
+
+This role provides a way to add RDF data from outside the
+distribution. This would typically be used for statements that are
+common to various distributions.
+
+Two files can be used: One containing statements that will be added to
+the DOAP of all distributions unconditionally, and one containing
+statements that will be added to the DOAP only if the subject of the
+statement matches a URI already in the data. The latter can be used to
+augment data conditionally.
+
+The file location can be specified with two environment variables:
+
+C<<DIST_INKT_ADD_DATA>> for the first file, and
+C<<DIST_INKT_FILTERED_DATA> for the second file. If they are not
+given, the defaults are C<<~/.dist-inkt-data.ttl>>,
+C<<~/.dist-inkt-filtered-data.ttl>> respectively.
+
+=head1 AUTHOR
+
+Kjetil Kjernsmo, C<< <kjetilk@cpan.org> >>
+
+=head1 COPYRIGHT & LICENSE
+
+Copyright 2018 Kjetil Kjernsmo
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+
+=cut
