@@ -4,7 +4,7 @@
 
 `Dist-Inkt-DOAP`
     :test-requirement       [ :on "Test::More 0.96"^^:CpanId ];
-    :runtime-requirement    [ :on "perl 5.010001"^^:CpanId ];
+    :runtime-requirement    [ :on "perl 5.014"^^:CpanId ];
     :runtime-requirement    [ :on "Moose 2.0800"^^:CpanId ];
     :runtime-requirement    [ :on "Dist::Inkt 0.017"^^:CpanId ];
     :runtime-requirement    [ :on "Dist::Inkt::Role::Test"^^:CpanId ];
