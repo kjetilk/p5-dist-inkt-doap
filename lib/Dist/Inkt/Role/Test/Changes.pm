@@ -5,7 +5,7 @@ use warnings;
 package Dist::Inkt::Role::Test::Changes;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.101_02';
+our $VERSION   = '0.110';
 
 use Moose::Role;
 with qw(
