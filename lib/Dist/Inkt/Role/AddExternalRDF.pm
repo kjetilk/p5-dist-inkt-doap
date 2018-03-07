@@ -1,7 +1,7 @@
 package Dist::Inkt::Role::AddExternalRDF;
 
 our $AUTHORITY = 'cpan:KJETILK';
-our $VERSION   = '0.100';
+our $VERSION   = '0.101_01';
 
 use Moose::Role;
 use namespace::autoclean;
