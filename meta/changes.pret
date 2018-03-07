@@ -51,7 +51,7 @@
 	  item "Some minor changes."^^Change;
 	].
 
-`Dist-Inkt-DOAP 0.101_02 cpan:KJETILK`
+`Dist-Inkt-DOAP 0.110 cpan:KJETILK`
 	issued  2018-03-07;
 	changeset [
  	  item "Add a role to add data from sources outside the distribution."^^Addition;
