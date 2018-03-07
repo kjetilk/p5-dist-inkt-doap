@@ -83,6 +83,14 @@ C<<DIST_INKT_FILTERED_DATA> for the second file. If they are not
 given, the defaults are C<<~/.dist-inkt-data.ttl>>,
 C<<~/.dist-inkt-filtered-data.ttl>> respectively.
 
+When these files are parsed, the parser will set the base URI to
+C<<http://purl.org/NET/cpan-uri/dist/Distribution-Name/>>, where
+C<<Distribution-Name>> is the name of your distribution. Thus, you can
+make statements about your project by simply using relative URLs, e.g.
+
+ <project> doap:programming-language "Perl" .
+
+
 =head1 AUTHOR
 
 Kjetil Kjernsmo, C<< <kjetilk@cpan.org> >>
