@@ -7,7 +7,6 @@ use Moose::Role;
 use namespace::autoclean;
 use RDF::Trine::Parser;
 use Path::Tiny;
-use Data::Dumper;
 
 with 'Dist::Inkt::Role::RDFModel';
 
@@ -22,7 +21,6 @@ after PopulateModel => sub {
 	 $self->log('Reading %s', $justaddfile);
 	 
 	 my $p = RDF::Trine::Parser->guess_parser_by_filename($justaddfile->basename);
-	 warn Dumper($p);
 	 $p->parse_file_into_model($base_uri, $justaddfile->filehandle, $self->model);
   }
   
@@ -41,7 +39,6 @@ after PopulateModel => sub {
 		  $resources{$st->object->uri_value} = 1;
 		}
 	 }
-#	 warn $filteredfile->basename;
 	 my $proto = RDF::Trine::Parser->guess_parser_by_filename($filteredfile->basename);
 	 my $p = $proto->new;
 	 my $handler = sub {
